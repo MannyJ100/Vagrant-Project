@@ -8,6 +8,10 @@ end
 
 Vagrant.configure("2") do |config|
 
+  config.vm.provider :virtualbox do |v|
+    v.customize ["modifyvm", :id, "--memory", 3096]
+  end
+
   config.vm.define "app" do |app|
       app.vm.box = "ubuntu/xenial64"
       app.vm.network "private_network", ip: "192.168.10.100"

@@ -30,7 +30,7 @@ execute "config java" do
  sudo debconf-set-selections"
 end
 
-package 'oracle-java8-installer'
+package "oracle-java8-installer"
 
 execute 'Get key' do
 	command  'wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -'

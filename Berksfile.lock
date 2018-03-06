@@ -1,9 +1,17 @@
 DEPENDENCIES
   apt (~> 6.1.4)
+  elasticsearch
+    git: https://github.com/redemptive/elasticsearch-cookbook.git
+    revision: eb8486fd154938c796c5dbae5f8f97e9fe53073e
+  kibana
+    git: https://github.com/MerrilCode/kibana-cookbook.git
+    revision: a040e46cd5c5231e2ea5ed5544633528b82ae782
   logstash
     git: https://github.com/Kudzai-Nyatsine/logstash-cookbook.git
-    revision: 2627b648e89b2463a96e26ab8ed60cf16111ac97
+    revision: 5cdf869f3dd63adef902227f31ecb518b4eeb027
 
 GRAPH
   apt (6.1.4)
+  elasticsearch (0.1.0)
+  kibana (0.1.0)
   logstash (0.1.0)

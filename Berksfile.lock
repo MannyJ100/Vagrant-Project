@@ -1,0 +1,9 @@
+DEPENDENCIES
+  apt (~> 6.1.4)
+  logstash
+    git: https://github.com/Kudzai-Nyatsine/logstash-cookbook.git
+    revision: 2627b648e89b2463a96e26ab8ed60cf16111ac97
+
+GRAPH
+  apt (6.1.4)
+  logstash (0.1.0)

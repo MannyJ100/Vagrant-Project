@@ -33,7 +33,7 @@ Once vagrant has finished launching the virtual machine, navigate to dev.local:9
 
 Run `sudo nano /etc/logstash/conf.d/10-syslog.conf` and when the editor opens, paste this in and save
 
-```input {
+input {
   file {
     type => "syslog"
     path => [ "/var/log/", "/var/log/*" ]
@@ -46,7 +46,7 @@ output {
     elasticsearch {
       hosts => "http://localhost:9200" # Use the internal IP of your Elasticsearch server
     }
-}```
+}
 
 Now run `chmod u=rwx,g=rwx,o=rwx /var/log` then `sudo service logstash restart`. Kibana will now have access to the local logs stored in syslog.
 
@@ -58,15 +58,14 @@ Assuming a Debian based Linux system, run `curl -L -O https://artifacts.elastic.
 
 Now we need to set up FileBeat to send logs to logstash run `sudo nano /etc/filebeat/filebeat.yml` then paste this in:
 
-```filebeat.prospectors:
+filebeat.prospectors:
 - type: log
   enabled: true
   paths:
     - /var/log/*.log
-    #- c:\programdata\elasticsearch\logs\*
 
 output.elasticsearch:
-  hosts: ["[ELK IP]:9200"]```
+  hosts: ["[ELK IP]:9200"]
 
 Finally run `sudo service logstash restart`
 

@@ -30,4 +30,9 @@ Vagrant.configure("2") do |config|
       # app.vm.synced_folder "./environment/app/templates", "/home/ubuntu/templates"
       # app.vm.provision "shell", path: "environment/app/provision.sh"
   end
+  config.vm.define "test" do |testing|
+    testing.vm.box = "ubuntu/xenial64"
+    testing.vm.network "private_network", ip: "192.168.10.10"
+    testing.hostsupdater.aliases = ["test.local"]
+  end
 end

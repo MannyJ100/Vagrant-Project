@@ -48,7 +48,7 @@ Run `sudo nano /etc/logstash/conf.d/10-syslog.conf` and when the editor opens, p
 	    }
 	}
 
-Now run `chmod u=rwx,g=rwx,o=rwx /var/log` then `sudo service logstash restart`. Kibana will now have access to the local logs stored in syslog.
+Now run `sudo chmod u=rwx,g=rwx,o=rwx /var/log` then `sudo service logstash restart`. Kibana will now have access to the local logs stored in syslog.
 
 ### FileBeat Setup
 
